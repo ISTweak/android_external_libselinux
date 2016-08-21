@@ -24,7 +24,7 @@ extern int selinux_android_load_policy(void);
 extern int selinux_android_reload_policy(void);
 
 extern int selinux_android_setcontext(uid_t uid,
-				      bool isSystemServer,
+				      int isSystemServer,
 				      const char *seinfo,
 				      const char *name);
 
@@ -49,6 +49,8 @@ extern int selinux_android_restorecon_pkgdir(const char *pkgdir,
                                              unsigned int flags);
 
 extern int selinux_android_seapp_context_reload(void);
+
+extern bool selinux_android_use_data_policy(void);
 
 #ifdef __cplusplus
 }
